@@ -1,0 +1,20 @@
+{
+    "port": 9092,
+    "connectionString": "mongodb://localhost/exodus",
+    "webHost":"https://www.exodus.com",
+    "jwt_secret": "hjdshfhjsf83e89qwehdasdu38ewhedwdbdhsgdhksgad",
+    "path": "/var/www/onmynode-dev/",
+    "plaid":{
+        "env":"sandbox",
+        "clientId":"617fa94bf4068d0011b4d174",
+        "clientSecret":"946d8c9c5a4e4d3f0a4c417e289a4b"
+    },
+    "bitcoinNode":{
+        "user":"bituser",
+        "pass":"exception",
+        "port":"18443",
+        "ip":"127.0.0.1"
+    }
+}
+
+
