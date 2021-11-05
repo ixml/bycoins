@@ -1,10 +1,10 @@
 var request = require("request");
 const config = require('../config.json');
 
-const USER = config.bitcoinNode.user;
-const PASS = config.bitcoinNode.pass;
-const IP = config.bitcoinNode.ip;
-const PORT = config.bitcoinNode.port;
+const USER =  process.env.RPC_USER || config.bitcoinNode.user;
+const PASS =  process.env.RPC_PASSWORD || config.bitcoinNode.pass;
+const IP = process.env.RPC_IP || config.bitcoinNode.ip;
+const PORT = process.env.RPC_PORT || config.bitcoinNode.port;
 
 const headers = {
     "content-type": "text/plain;"

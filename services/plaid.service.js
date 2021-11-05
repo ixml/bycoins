@@ -5,11 +5,11 @@ const bankService = require('./bank.service');
 
 
 const configuration = new Configuration({
-  basePath: PlaidEnvironments[config.plaid.env],
+  basePath: PlaidEnvironments[process.env.PLAID_ENV || config.plaid.env],
   baseOptions: {
     headers: {
-      'PLAID-CLIENT-ID': config.plaid.clientId,
-      'PLAID-SECRET': config.plaid.clientSecret,
+      'PLAID-CLIENT-ID': process.env.PLAID_CLIENT_ID || config.plaid.clientId,
+      'PLAID-SECRET': process.env.PLAID_SECRET || config.plaid.clientSecret,
     },
   },
 });
