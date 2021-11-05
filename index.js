@@ -1,7 +1,5 @@
 const express = require("express");
-const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const logger = require('./helpers/logger');
 const jwt = require('./middlewares/jwt');
 const morgan = require('morgan');
 const fs = require('fs')
@@ -28,7 +26,7 @@ app.use(morgan('combined', { stream: accessLogStream }))
 
 
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({origin:"*", methods:"GET,HEAD,PUT,PATCH,POST,DELETE",allowedHeaders:"*"}));
 
 // use JWT auth to secure the api
 app.use(jwt());
