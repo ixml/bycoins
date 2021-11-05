@@ -8,6 +8,8 @@ The account route supports login and registration
 the bank route connect to the customer bank to their account with the application 
 the wallet route is used to get wallet balance and credit user wallet when the buy bitcoin
 
+The api was deployed to https://exodus-wallet-api.herokuapp.com/ but had issue setting up the mondo db database due to cost
+
 ## Available Scripts
 
 In the project directory, you can run:
