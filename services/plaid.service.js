@@ -66,7 +66,7 @@ const plaidService = {
                 
             const accounts = await bankService.getAccounts(userId);
             console.log(accounts)
-            if(!accounts)
+            if(!accounts || accounts.length==0)
             return [];
 
 

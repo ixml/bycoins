@@ -3,7 +3,6 @@ const userService = require('../services/user.service');
 
 const Joi = require('joi');
 const validateRequest = require('../middlewares/validate-request');
-const jwt = require('jsonwebtoken');
 const logger = require('../helpers/logger');
 
 const router = express.Router();
@@ -14,7 +13,7 @@ const login = (req,res,next)=> {
         .then(user => {
             res.json(user);
         })
-        .catch(err => next(err));
+       .catch(err => next(err));
 }
 
 const register = (req,res,next)=>{
@@ -25,7 +24,6 @@ const register = (req,res,next)=>{
 }
 
 const logout = (req,res)=>{
-
     req.session.destroy((err) => {
         if(err) {
             return logger.error(err);

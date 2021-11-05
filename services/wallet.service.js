@@ -1,8 +1,6 @@
-const crypto = require("crypto");
-const { VerificationTokenType } = require("../models/constants/enums")
 const db = require('../helpers/db');
 const bitcoinNodeService = require('./bitcoin-node.service');
-const plaidService = require('./plaid.service');
+//const plaidService = require('./plaid.service');
 
 
 
@@ -26,12 +24,14 @@ const walletService = {
 
     topUpWallet : async function (userId,amount) {
 
+        console.log("want to top up wallet")
         var wallet = await db.Wallet
         .findOne({ userId: userId});
 
         if(!wallet){
             throw "Wallet record not found";
         }
+        console.log(wallet);
 
         //assuming bitcoin price is 60,000;
         // let usdAmount = 60000*amount;
@@ -43,18 +43,22 @@ const walletService = {
         //     throw "Insufficient account balance";
         // }
 
-        const ret = await bitcoinNodeService.sendToAddress(wallet.address,amount);
-        if(ret){
-            wallet.balance += amount;
+        try{
+            //wallet.balance += amount;
+            const ret = await bitcoinNodeService.sendToAddress(wallet.address,amount);
+            if(ret){
+                wallet.balance += parseFloat(amount);
+            }
         }
+        catch(error){
+            console.log(error);
+        }
+        
         //const balance  = await bitcoinNodeService.getBalance(wallet.address);
 
         await wallet.save();
         return wallet;
     },
-
-    
-
 
     getWallets: async function(userId){
         console.log(userId)

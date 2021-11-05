@@ -1,8 +1,6 @@
 const express = require('express');
 const walletService = require('../services/wallet.service');
-const Joi = require('joi');
-const validateRequest = require('../middlewares/validate-request');
-const logger = require('../helpers/logger');
+
 
 const router = express.Router();
 
@@ -19,7 +17,7 @@ const topUpWallet = (req,res,next)=>{
 }
 
 router.get('/', getWallets);
-router.post('/', topUpWallet);
+router.put('/', topUpWallet);
 
 module.exports = router;
 

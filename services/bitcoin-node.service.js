@@ -62,7 +62,7 @@ const bitcoinNodeService = {
 
     sendToAddress : async function (address, amount) {
 
-        var query = `{"jsonrpc":"1.0","id":"curltext","method":"sendtoaddress","params":[${address}, ${amount}]}`;
+        var query = `{"jsonrpc":"1.0","id":"curltext","method":"sendtoaddress","params":["${address}", ${amount}]}`;
         var options = {
             url: `http://${USER}:${PASS}@${IP}:${PORT}/`,
             method: "POST",

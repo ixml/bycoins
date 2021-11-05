@@ -44,11 +44,12 @@ app.use(base+'/wallet', wallet);
 app.use(errorHandler);
 
 ///start server
-app.listen(config.port,(err)=>{
+const port = process.env.PORT || config.port
+app.listen(port,(err)=>{
 
     if(err){
         console.log(err);
     }
     //const port = 
-    console.log("Server started at "+ config.port )
+    console.log("Server started at "+ port )
 });
