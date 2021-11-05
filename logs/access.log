@@ -15683,3 +15683,4 @@
 ::1 - - [05/Nov/2021:12:21:12 +0000] "OPTIONS /api/bank HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36"
 ::1 - - [05/Nov/2021:12:21:13 +0000] "GET /api/bank HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36"
 ::1 - - [05/Nov/2021:21:40:56 +0000] "PUT /api/wallet/ HTTP/1.1" 200 236 "-" "PostmanRuntime/7.26.8"
+::1 - - [05/Nov/2021:22:24:45 +0000] "POST /api/account/login HTTP/1.1" 200 441 "-" "PostmanRuntime/7.26.8"
