@@ -26,7 +26,7 @@ app.use(morgan('combined', { stream: accessLogStream }))
 
 
 app.use(bodyParser.json());
-app.use(cors({origin:'http://exodus-wallet.herokuapp.com/', methods:"GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",allowedHeaders:"*"}));
+app.use(cors({origin:['http://exodus-wallet.herokuapp.com/','http://localhost:9092'], methods:['GET','POST','DELETE','UPDATE','PUT','PATCH'],allowedHeaders:"*"}));
 
 // use JWT auth to secure the api
 app.use(jwt());
