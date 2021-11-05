@@ -4,11 +4,11 @@ This project was created using Nodejs and mongo DB
 
 ## How it works
 
-The account route supports login and registration
-the bank route connect to the customer bank to their account with the application 
-the wallet route is used to get wallet balance and credit user wallet when the buy bitcoin
+The account route supports login and registration.\
+The bank route connect to the customer bank to their account with the application \
+The wallet route is used to get wallet balance and credit user wallet when the buy bitcoin\
 
-The api was deployed to https://exodus-wallet-api.herokuapp.com/ but had issue setting up the mondo db database due to cost
+The api was deployed to https://exodus-wallet-api.herokuapp.com/ 
 
 ## Available Scripts
 
